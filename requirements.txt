@@ -1,0 +1,6 @@
+cryptography
+fernet
+flask
+gTTS
+gtts
+googletrans
