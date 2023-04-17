@@ -5,7 +5,7 @@ import sys
 
 class Info_and_Install:  # Info_and_Install # אין פעולה בונה
     def Cores_Computer():
-        ''' 
+        '''
         הפעולה מחזירה את מספר המעבדים שבמערכת.
         מחזירה ללא אם לא נקבע
         '''
