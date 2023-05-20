@@ -3,36 +3,45 @@ from googletrans import *
 from googletrans import LANGUAGES
 
 ###########################################
-translator = Translator()
 global_langaes = LANGUAGES
 
 ###########################################
 
 
-class Class_Translate_Language:
+class Translate_Language:
     def __init__(self, text):
         '''
         פעולה בונה 
         text (str): טקס לקריאה
         '''
         self.text = text
+        self.translator = Translator()
 
-    def __iter__(self):
-        '''
-        פשוט כדי לחזיר את תחונות של ספריה
-        '''
-        return self
+    # def __iter__(self):
+    #     '''
+    #     פשוט כדי לחזיר את תחונות של ספריה
+    #     '''
+    #     return self
 
     def Translator_Text(self, language='en'):
         """
-            הפעולה מחקבלת שפה ומתרגמת את טקסט
-            הוא מחזר את טקסט מתוגם לאותו שפה
-            """
+        הפעולה מחקבלת שפה ומתרגמת את טקסט שבתוך ספרייה לאותו השפה
+        """
         global translator
-        source_lang = translator.detect(self.text)
-        text_translate = translator.translate(
+        source_lang = self.translator.detect(self.text)
+        text_translate = self.translator.translate(
             self.text, src=source_lang.lang, dest=language)
         return text_translate.text
+
+    def Language_Detection(self, text):
+        """
+        הפעולה מקבלת טקסט
+        מזהה את שפת הדיבור שבה הטקסט רשום
+        ומחזירה את מפתח השפה
+        פעולה נימצת כאן רק בגלל שאני נזר בסיפר החיצונית
+        """
+        detection = self.translator.detect(text)
+        return detection
 
     def Dictionary_All(self):
         global global_langaes
@@ -46,10 +55,10 @@ class Class_Translate_Language:
         global global_langaes
         return global_langaes.values()
 
-ה   
+
 if __name__ == "__main__":
     text = 'שלום'
-    ctl = Class_Translate_Language(text)
+    ctl = Translate_Language(text)
     print(ctl.Dictionary_All())
     translator = ctl.Translator_Text('French')
     print(translator)
