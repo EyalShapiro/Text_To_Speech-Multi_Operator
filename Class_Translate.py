@@ -5,8 +5,7 @@ from googletrans import LANGUAGES
 ###########################################
 global_langaes = LANGUAGES
 
-###########################################
-
+##########################################
 
 class Translate_Language:
     def __init__(self, text):
