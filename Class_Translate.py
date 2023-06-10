@@ -1,9 +1,8 @@
 """ספריות"""
-from googletrans import *
-from googletrans import LANGUAGES
-
+# from googletrans import *
+import googletrans
 ###########################################
-global_langaes = LANGUAGES
+global_langaes =googletrans.LANGUAGES
 
 ##########################################
 
@@ -14,7 +13,7 @@ class Translate_Language:
         text (str): טקס לקריאה
         '''
         self.text = text
-        self.translator = Translator()
+        self.translator = googletrans.Translator()
 
     # def __iter__(self):
     #     '''
@@ -43,14 +42,26 @@ class Translate_Language:
         return detection
 
     def Dictionary_All(self):
+        """
+        הפעולה לקחת את מילון שפות שבספירה
+        ומחזיר את מילון משכילה את שפה ופתחות של כל שפות
+        """
         global global_langaes
         return global_langaes
 
     def Key_Languages(self):
+        """
+        הפעולה לקחת את מילון שפות שבספירה
+        ומחזיר את מפתחות של כל שפות שבמילון
+        """
         global global_langaes
         return global_langaes.keys()
 
     def List_Languages(self):
+        """
+        הפעולה לקחת את מילון שפות שבספירה
+        ומחזיר את שפות משכילה את המילון
+        """
         global global_langaes
         return global_langaes.values()
 

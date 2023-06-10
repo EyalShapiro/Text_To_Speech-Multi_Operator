@@ -14,7 +14,7 @@ class Text_To_Speech:
         self.language = language  # אין פעולה לזהוי כאן כי היא מזוה לפני הכניסה לספריה
         self.file_name = file_name
         self.location = location
-
+    
 
 if __name__ == "__main__":
     speech = Text_To_Speech('text', 'en')
