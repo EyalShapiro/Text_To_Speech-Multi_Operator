@@ -3,7 +3,7 @@ from gtts import gTTS
 
 
 class Text_To_Speech:
-    def __init__(self, text, language, location='', file_name='say.wav'):
+    def __init__(self, text, language, location='C:\Eyal\Codes\Text_To_Speech-Multi_Operator\\', file_name='say.wav'):
         '''
             location(str): מיקום הקובץ
             text (str): טקס לקריאה
@@ -14,6 +14,7 @@ class Text_To_Speech:
         self.language = language  # אין פעולה לזהוי כאן כי היא מזוה לפני הכניסה לספריה
         self.file_name = file_name
         self.location = location
+        
     
 
 if __name__ == "__main__":

@@ -1,17 +1,18 @@
 import sounddevice as sd
-from scipy.io.wavfile import write
+import wavio as wv
+#https://www.geeksforgeeks.org/create-a-voice-recorder-using-python/
+duration = 5  # Duration of recording in seconds#משתנה משך הזמן מייצג את משך ההקלטה בשניות
+sample_rate = 98000  # Sampling rate#הוא קצב הדגימה
 
-# Sampling frequency
-freq = 44100
+print("Recording start")
 
-# Recording duration
-duration = 5
-# Start recorder with the given values
-# of duration and sample frequency
-recording = sd.rec(int(duration * freq),samplerate=freq, channels=2)
+# Record audio
+recording = sd.rec(int(duration * sample_rate), samplerate=sample_rate, channels=2)
+sd.wait()  # Wait until recording is finished
 
-# Record audio for the given number of seconds
-sd.wait()
-# This will convert the NumPy array to an audio
-# file with the given sampling frequency
-write("recording.wav", freq, recording)
+print("Recording finished.")
+
+# Save the recorded audio to a WAV file
+output_filename = "recording.wav"
+wv.write("recording.wav", recording, sample_rate, sampwidth=2)
+print("Audio saved to", output_filename)
