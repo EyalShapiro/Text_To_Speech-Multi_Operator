@@ -1,22 +1,22 @@
-import sounddevice as sd
-import scipy.io.wavfile as wav
+# import sounddevice as sd
+# import scipy.io.wavfile as wav
 
-duration = 5  # Duration of recording in seconds#משתנה משך הזמן מייצג את משך ההקלטה בשניות
-fs = 98000  # Sampling rate#הוא קצב הדגימה
+# duration = 5  # Duration of recording in seconds#משתנה משך הזמן מייצג את משך ההקלטה בשניות
+# fs = 98000  # Sampling rate#הוא קצב הדגימה
 
-print("Recording started...")
+# print("Recording started...")
 
-# Record audio
-recording = sd.rec(int(duration * fs), samplerate=fs, channels=2)
-sd.wait()  # Wait until recording is finished
+# # Record audio
+# recording = sd.rec(int(duration * fs), samplerate=fs, channels=2)
+# sd.wait()  # Wait until recording is finished
 
-print("Recording finished.")
+# print("Recording finished.")
 
-# Save the recorded audio to a WAV file
-output_filename = "recording.wav"
-wav.write(output_filename, fs, recording)
+# # Save the recorded audio to a WAV file
+# output_filename = "recording.wav"
+# wav.write(output_filename, fs, recording)
 
-print("Audio saved to", output_filename)
+# print("Audio saved to", output_filename)
 # import required libraries
 import sounddevice as sd
 from scipy.io.wavfile import write
