@@ -1,7 +1,0 @@
-{
-    "livePreview.defaultPreviewPath": "/t.Html",
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.python"
-    },
-    "python.formatting.provider": "none"
-}
